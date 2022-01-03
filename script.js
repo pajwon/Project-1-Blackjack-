@@ -40,3 +40,19 @@ function makeDeck() {
 // check console to see if you made 52 cards, it worked! but in order
 // console.log(makeDeck()) 
 
+
+// deck = makeDeck()
+//need deck in random order, need it shuffled 
+function shuffledDeck(deck) {
+    for (let i=0; i<deck.length; i++) {
+        let random = Math.floor(Math.random() * deck.length)
+        let shuffled = deck[random]
+        deck[random] = deck[i]
+        deck[i] = shuffled  
+
+        //using console.log to check if deck is shuffled
+        // console.log(shuffled)
+    }
+}
+// invoking to see console.log of shuffled, it is random
+// shuffledDeck(deck)
