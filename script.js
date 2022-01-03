@@ -24,12 +24,12 @@ stayButton.style.display = 'none'
 //making a deck using two for loops
 function makeDeck() {
     let deck = []
-    for (let indexSuits = 0; indexSuits < suits.length; indexSuits++) {
-        for (let indexNumbers = 0; indexNumbers < numbers.length; indexNumbers++) {
+    for (let i = 0; i < suits.length; i++) {
+        for (let n = 0; n < numbers.length; n++) {
             //this makes one card with random suit and number so make card variable
             let card = {
-                suit: suits[indexSuits],
-                number: numbers[indexNumbers]
+                suit: suits[i],
+                number: numbers[n]
             }
             //add the card to deck 
             deck.push(card);
@@ -39,3 +39,4 @@ function makeDeck() {
 }
 // check console to see if you made 52 cards, it worked! but in order
 // console.log(makeDeck()) 
+
