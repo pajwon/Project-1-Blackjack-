@@ -16,3 +16,7 @@ let gamblerWon = false
 let gamblerHand = []
 let dealerHand = []
 let deck = []
+
+//in html just want to show start game not hit and stay yet 
+hitButton.style.display = 'none'
+stayButton.style.display = 'none'
