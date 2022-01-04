@@ -61,3 +61,9 @@ function shuffledDeck(deck) {
 }
 // invoking to see console.log of shuffled, it is random
 // shuffledDeck(deck)
+
+//need function to get a card from top of the deck
+    //to later add for hit and for hands of each person
+function getCard() {
+    return deck.shift()
+}
