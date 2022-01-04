@@ -153,6 +153,11 @@ stayButton.addEventListener('click', () => {
     blackjackTable()
 })
 
+
+function eachCard(card) {
+    return `${card.number} ${card.suit}`
+}
+
 //created function table to add text 
     // instead of writing it in index html all the writing 
     // will an id to a <p> tag to add everything else on js 
@@ -162,5 +167,11 @@ function blackjackTable () {
     if (startGame === false) {
         gameText.innerText = 'BLACKJACK'
         return;
+    }
+    //made a loop for dealer hand to have what the two cards dealer has 
+    // will have to add text later to gameText 
+    let dealerString = ''
+    for (let i = 0; i < dealerHand.length; i++) {
+        dealerString += eachCard(dealerHand[i])
     }
 }
