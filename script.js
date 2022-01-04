@@ -17,6 +17,11 @@ let gamblerHand = []
 let dealerHand = []
 let deck = []
 
+//had to add a total for each person to see how close they are to 21
+let gamblerTotal = 0
+let dealerTotal = 0
+
+
 //in html just want to show start game not hit and stay yet 
 hitButton.style.display = 'none'
 stayButton.style.display = 'none'
