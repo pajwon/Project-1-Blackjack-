@@ -67,3 +67,28 @@ function shuffledDeck(deck) {
 function getCard() {
     return deck.shift()
 }
+
+// creating conditional for each number to give an actual numeric value 
+function cardValue(card) {
+    if (card.number === 'A') {
+        return 1;
+    } else if (card.number === '2') {
+        return 2;
+    } else if (card.number === '3') {
+        return 3;
+    } else if (card.number === '4') {
+        return 4;
+    } else if (card.number === '5') {
+        return 5;
+    } else if (card.number === '6') {
+        return 6;
+    } else if (card.number === '7') {
+        return 7;
+    } else if (card.number === '8') {
+        return 8;
+    } else if (card.number === '9') {
+        return 9;
+    } else {
+        return 10;
+    }
+}
