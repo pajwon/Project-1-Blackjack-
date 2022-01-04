@@ -174,4 +174,11 @@ function blackjackTable () {
     for (let i = 0; i < dealerHand.length; i++) {
         dealerString += eachCard(dealerHand[i])
     }
+    //do same thing for gambler
+    let gamblerString = ''
+    for (let j = 0; j < gamblerHand.length; i++) {
+        gamblerString += eachCard(gamblerHand[j])
+    }
+
+    
 }
