@@ -116,3 +116,24 @@ function whoWins () {
         }
     }
 }
+
+//event listeners first for starting the game 
+    //use the three boolean values from beginning 
+
+startGameButton.addEventListener('click', () => {
+    startGame = true 
+    gameOver = false
+    gamblerWon = false 
+
+    deck = makeDeck()
+    shuffledDeck(deck)
+
+    dealerHand = [getCard(), getCard()]
+    gamblerHand = [getCard(), getCard()]
+
+    startGameButton.style.display = 'none'
+    hitButton.style.display = 'inline'
+    stayButton.style.display = 'inline'
+
+})
+
