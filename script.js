@@ -137,3 +137,20 @@ startGameButton.addEventListener('click', () => {
 
 })
 
+//for hit and stay need add whowins function to check each others hand 
+    // need a function also to add to hit and stay to have text for now for what 
+    // each person actually has like Dealer hand is A Diamonds and J Clubs and to say 
+    // the total of which will be 21 
+hitButton.addEventListener('click', () => {
+    gamblerHand.push(getCard())
+    whoWins()
+    
+})
+    
+stayButton.addEventListener('click', () => {
+    gameOver = true
+    whoWins()
+
+})
+
+
