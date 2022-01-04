@@ -92,3 +92,27 @@ function cardValue(card) {
         return 10;
     }
 }
+
+//a function for comparing results to see who won 
+function whoWins () {
+
+    if (gameOver) {
+        while (dealerTotal < gamblerTotal && gamblerTotal <= 21 && dealerTotal <= 21) {
+            dealerHand.push(getCard())
+
+        }
+    }
+    if (gamblerTotal > 21) {
+        gamblerWon = false
+        gameOver = true
+    } else if (dealerTotal > 21) {
+        gamblerWon = true
+        gameOver = true
+    } else if (gameOver) {
+        if (gamblerTotal > dealerTotal) {
+            gamblerWon = true
+        } else {
+            gamblerWon = false
+        }
+    }
+}
