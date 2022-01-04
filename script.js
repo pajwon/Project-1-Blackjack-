@@ -153,7 +153,14 @@ stayButton.addEventListener('click', () => {
     blackjackTable()
 })
 
-//created function table
-function blackjackTable () {
+//created function table to add text 
+    // instead of writing it in index html all the writing 
+    // will an id to a <p> tag to add everything else on js 
 
+let gameText = document.querySelector('game-text')
+function blackjackTable () {
+    if (startGame === false) {
+        gameText.innerText = 'BLACKJACK'
+        return;
+    }
 }
