@@ -134,7 +134,7 @@ startGameButton.addEventListener('click', () => {
     startGameButton.style.display = 'none'
     hitButton.style.display = 'inline'
     stayButton.style.display = 'inline'
-
+    blackjackTable()
 })
 
 //for hit and stay need add whowins function to check each others hand 
@@ -144,13 +144,16 @@ startGameButton.addEventListener('click', () => {
 hitButton.addEventListener('click', () => {
     gamblerHand.push(getCard())
     whoWins()
-    
+    blackjackTable()
 })
     
 stayButton.addEventListener('click', () => {
     gameOver = true
     whoWins()
-
+    blackjackTable()
 })
 
+//created function table
+function blackjackTable () {
 
+}
