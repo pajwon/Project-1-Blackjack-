@@ -1,25 +1,19 @@
 //Suits and numbers
-let suits = ['Diamonds', 'Hearts', 'Spades', 'Clubs']
+let suits = ['♦', '♥', '♠', '♣']
 let numbers = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K' ]
-
-//create buttons from ids in index.html
-let startGameButton = document.querySelector('#start-game')
-
-let hitButton = document.querySelector('#hit')
-
-let stayButton = document.querySelector('#stay')
 
 //game variables 
 let startGame = false
-let gameOver = false
+let gameIsDone = false
 let gamblerWon = false
 let gamblerHand = []
 let dealerHand = []
 let deck = []
 
-//had to add a total for each person to see how close they are to 21
-let gamblerTotal = 0
-let dealerTotal = 0
+//create buttons from ids in index.html
+let startGameButton = document.querySelector('#start-game')
+let hitButton = document.querySelector('#hit')
+let stayButton = document.querySelector('#stay')
 
 
 //in html just want to show start game not hit and stay yet 
@@ -93,10 +87,14 @@ function cardValue(card) {
     }
 }
 
+//had to add a total for each person to see how close they are to 21
+let gamblerTotal = 0
+let dealerTotal = 0
+
 //a function for comparing results to see who won 
 function whoWins () {
     reviseTotal()
-    if (gameOver) {
+    if (gameIsDone) {
         while (dealerTotal < gamblerTotal && gamblerTotal <= 21 && dealerTotal <= 21) {
             dealerHand.push(getCard())
             reviseTotal()
@@ -105,11 +103,11 @@ function whoWins () {
     }
     if (gamblerTotal > 21) {
         gamblerWon = false
-        gameOver = true
+        gameIsDone = true
     } else if (dealerTotal > 21) {
         gamblerWon = true
-        gameOver = true
-    } else if (gameOver) {
+        gameIsDone = true
+    } else if (gameIsDone) {
         if (gamblerTotal > dealerTotal) {
             gamblerWon = true
         } else {
@@ -123,7 +121,7 @@ function whoWins () {
 
 startGameButton.addEventListener('click', () => {
     startGame = true 
-    gameOver = false
+    gameIsDone = false
     gamblerWon = false 
 
     deck = makeDeck()
@@ -149,7 +147,7 @@ hitButton.addEventListener('click', () => {
 })
     
 stayButton.addEventListener('click', () => {
-    gameOver = true
+    gameIsDone = true
     whoWins()
     blackjackTable()
 })
@@ -185,7 +183,7 @@ function blackjackTable () {
 
     gameText.innerText = 'Dealer has ' + dealerString + ' and a total of ' + dealerTotal + '\n\n Gambler has ' + gamblerString + ' and a total of ' + gamblerTotal + "\n"
 
-    if(gameOver) {
+    if(gameIsDone) {
         if (gamblerWon) {
             gameText.innerText += "MONEY MONEY"
         } else {
