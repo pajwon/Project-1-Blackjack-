@@ -180,5 +180,6 @@ function blackjackTable () {
         gamblerString += eachCard(gamblerHand[j])
     }
 
-    
+    gameText.innerText = `Dealer has ${dealerString} and ${dealerTotal} \n Gambler has ${gamblerString} and ${gamblerTotal} \n`
+
 }
