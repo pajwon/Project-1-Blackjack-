@@ -17,8 +17,9 @@ are couple ways you can do that
     2. CSS
     3. Javascript
 
-## Getting Started
-The link to the game is:
-- (file:///Users/PajwonAshraf/Desktop/seir-1213/unit1/projects/project1-Blackjack/Project-1-Blackjack-/index.html)
+## Getting Started:
+    file:///Users/PajwonAshraf/Desktop/seir-1213/unit1/projects/project1-Blackjack/Project-1-Blackjack-/index.html
+
+- Link above is for the game 
 
 ## Next Steps 
