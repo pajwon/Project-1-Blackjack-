@@ -183,7 +183,7 @@ function blackjackTable () {
 
     reviseTotal()
 
-    gameText.innerText = "Dealer's hand is \n " + dealerString + ' and a total of ' + dealerTotal + '\n\n Gambler has ' + gamblerString + ' and a total of ' + gamblerTotal + "\n"
+    gameText.innerText = "\n\n\nDealer's hand is \n " + dealerString + ' and a total of ' + dealerTotal + '\n\n\n\n\n\n\n\n\n Gambler has \n' + gamblerString + ' and a total of ' + gamblerTotal + "\n"
 
     if(gameIsDone) {
         if (gamblerWon) {
