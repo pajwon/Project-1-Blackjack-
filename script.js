@@ -193,3 +193,20 @@ function blackjackTable () {
         stayButton.style.display = 'none'
     }
 }
+
+function theTotal(cardArray) {
+    let total = 0 
+    let anAce = false
+    for (let i=0; i < cardArray.length; i++) {
+        let card = cardArray[i]
+        total += cardValue(card)
+        if (card.number === "A") {
+            anAce = true
+        }
+    }
+    if (anAce && total + 10 <= 21) {
+        return total + 10
+    }
+    return total
+}
+
