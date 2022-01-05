@@ -176,10 +176,20 @@ function blackjackTable () {
     }
     //do same thing for gambler
     let gamblerString = ''
-    for (let j = 0; j < gamblerHand.length; i++) {
+    for (let j = 0; j < gamblerHand.length; j++) {
         gamblerString += eachCard(gamblerHand[j])
     }
 
-    gameText.innerText = `Dealer has ${dealerString} and ${dealerTotal} \n Gambler has ${gamblerString} and ${gamblerTotal} \n`
+    gameText.innerText = 'Dealer has ' + dealerString + 'and' + dealerTotal + '\n Gambler has' + gamblerString + 'and ' + gamblerTotal
 
+    if(gameOver) {
+        if (gamblerWon) {
+            gameText.innerText += "MONEY MONEY"
+        } else {
+            gameText.innerText += "THE HOUSE ALWAYS WINS"
+        }
+        startGameButton.style.display = 'inline'
+        hitButton.style.display = 'none'
+        stayButton.style.display = 'none'
+    }
 }
