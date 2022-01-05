@@ -39,29 +39,6 @@ function makeDeck() {
 // check console to see if you made 52 cards, it worked! but in order
 // console.log(makeDeck()) 
 
-
-// deck = makeDeck()
-//need deck in random order, need it shuffled 
-function shuffledDeck(deck) {
-    for (let i=0; i<deck.length; i++) {
-        let random = Math.floor(Math.random() * deck.length)
-        let shuffled = deck[random]
-        deck[random] = deck[i]
-        deck[i] = shuffled  
-
-        //using console.log to check if deck is shuffled
-        // console.log(shuffled)
-    }
-}
-// invoking to see console.log of shuffled, it is random
-// shuffledDeck(deck)
-
-//need function to get a card from top of the deck
-    //to later add for hit and for hands of each person
-function getCard() {
-    return deck.shift()
-}
-
 // creating conditional for each number to give an actual numeric value 
 function cardValue(card) {
     if (card.number === 'A') {
@@ -87,6 +64,28 @@ function cardValue(card) {
     }
 }
 
+// deck = makeDeck()
+//need deck in random order, need it shuffled 
+function deckShuffling(deck) {
+    for (let i=0; i<deck.length; i++) {
+        let random = Math.floor(Math.random() * deck.length)
+        let shuffled = deck[random]
+        deck[random] = deck[i]
+        deck[i] = shuffled  
+
+        //using console.log to check if deck is shuffled
+        // console.log(shuffled)
+    }
+}
+// invoking to see console.log of shuffled, it is random
+// shuffledDeck(deck)
+
+//need function to get a card from top of the deck
+    //to later add for hit and for hands of each person
+function getCard() {
+    return deck.shift()
+}
+
 //had to add a total for each person to see how close they are to 21
 let gamblerTotal = 0
 let dealerTotal = 0
@@ -98,7 +97,6 @@ function whoWins () {
         while (dealerTotal < gamblerTotal && gamblerTotal <= 21 && dealerTotal <= 21) {
             dealerHand.push(getCard())
             reviseTotal()
-
         }
     }
     if (gamblerTotal > 21) {
@@ -125,7 +123,7 @@ startGameButton.addEventListener('click', () => {
     gamblerWon = false 
 
     deck = makeDeck()
-    shuffledDeck(deck)
+    deckShuffling(deck)
 
     dealerHand = [getCard(), getCard()]
     gamblerHand = [getCard(), getCard()]
@@ -136,22 +134,26 @@ startGameButton.addEventListener('click', () => {
     blackjackTable()
 })
 
-//for hit and stay need add whowins function to check each others hand 
-    // need a function also to add to hit and stay to have text for now for what 
-    // each person actually has like Dealer hand is A Diamonds and J Clubs and to say 
-    // the total of which will be 21 
-hitButton.addEventListener('click', () => {
-    gamblerHand.push(getCard())
-    whoWins()
-    blackjackTable()
-})
-    
-stayButton.addEventListener('click', () => {
-    gameIsDone = true
-    whoWins()
-    blackjackTable()
-})
+function theTotal(cardArray) {
+    let total = 0 
+    let anAce = false
+    for (let i=0; i < cardArray.length; i++) {
+        let card = cardArray[i]
+        total += cardValue(card)
+        if (card.number === "A") {
+            anAce = true
+        }
+    }
+    if (anAce && total + 10 <= 21) {
+        return total + 10
+    }
+    return total
+}
 
+function reviseTotal () {
+    dealerTotal = theTotal(dealerHand)
+    gamblerTotal = theTotal(gamblerHand)
+}
 
 function eachCard(card) {
     return `${card.number} ${card.suit}`
@@ -181,7 +183,7 @@ function blackjackTable () {
 
     reviseTotal()
 
-    gameText.innerText = 'Dealer has ' + dealerString + ' and a total of ' + dealerTotal + '\n\n Gambler has ' + gamblerString + ' and a total of ' + gamblerTotal + "\n"
+    gameText.innerText = "Dealer's hand is \n " + dealerString + ' and a total of ' + dealerTotal + '\n\n Gambler has ' + gamblerString + ' and a total of ' + gamblerTotal + "\n"
 
     if(gameIsDone) {
         if (gamblerWon) {
@@ -195,23 +197,18 @@ function blackjackTable () {
     }
 }
 
-function theTotal(cardArray) {
-    let total = 0 
-    let anAce = false
-    for (let i=0; i < cardArray.length; i++) {
-        let card = cardArray[i]
-        total += cardValue(card)
-        if (card.number === "A") {
-            anAce = true
-        }
-    }
-    if (anAce && total + 10 <= 21) {
-        return total + 10
-    }
-    return total
-}
-
-function reviseTotal () {
-    dealerTotal = theTotal(dealerHand)
-    gamblerTotal = theTotal(gamblerHand)
-}
+//for hit and stay need add whowins function to check each others hand 
+    // need a function also to add to hit and stay to have text for now for what 
+    // each person actually has like Dealer hand is A Diamonds and J Clubs and to say 
+    // the total of which will be 21 
+hitButton.addEventListener('click', () => {
+    gamblerHand.push(getCard())
+    whoWins()
+    blackjackTable()
+})
+    
+stayButton.addEventListener('click', () => {
+    gameIsDone = true
+    whoWins()
+    blackjackTable()
+})
