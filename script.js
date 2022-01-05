@@ -95,10 +95,11 @@ function cardValue(card) {
 
 //a function for comparing results to see who won 
 function whoWins () {
-
+    reviseTotal()
     if (gameOver) {
         while (dealerTotal < gamblerTotal && gamblerTotal <= 21 && dealerTotal <= 21) {
             dealerHand.push(getCard())
+            reviseTotal()
 
         }
     }
@@ -162,7 +163,7 @@ function eachCard(card) {
     // instead of writing it in index html all the writing 
     // will an id to a <p> tag to add everything else on js 
 
-let gameText = document.querySelector('game-text')
+let gameText = document.querySelector('#game-text')
 function blackjackTable () {
     if (startGame === false) {
         gameText.innerText = 'BLACKJACK'
@@ -172,15 +173,17 @@ function blackjackTable () {
     // will have to add text later to gameText 
     let dealerString = ''
     for (let i = 0; i < dealerHand.length; i++) {
-        dealerString += eachCard(dealerHand[i])
+        dealerString += eachCard(dealerHand[i]) + "\n"
     }
     //do same thing for gambler
     let gamblerString = ''
     for (let j = 0; j < gamblerHand.length; j++) {
-        gamblerString += eachCard(gamblerHand[j])
+        gamblerString += eachCard(gamblerHand[j]) + "\n"
     }
 
-    gameText.innerText = 'Dealer has ' + dealerString + 'and' + dealerTotal + '\n Gambler has' + gamblerString + 'and ' + gamblerTotal
+    reviseTotal()
+
+    gameText.innerText = 'Dealer has ' + dealerString + ' and a total of ' + dealerTotal + '\n\n Gambler has ' + gamblerString + ' and a total of ' + gamblerTotal + "\n"
 
     if(gameOver) {
         if (gamblerWon) {
@@ -210,3 +213,7 @@ function theTotal(cardArray) {
     return total
 }
 
+function reviseTotal () {
+    dealerTotal = theTotal(dealerHand)
+    gamblerTotal = theTotal(gamblerHand)
+}
