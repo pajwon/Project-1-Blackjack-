@@ -15,6 +15,8 @@ let startGameButton = document.querySelector('#start-game')
 let hitButton = document.querySelector('#hit')
 let stayButton = document.querySelector('#stay')
 
+let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/clickUp.mp3')
+
 
 //in html just want to show start game not hit and stay yet 
 hitButton.style.display = 'none'
@@ -132,6 +134,8 @@ startGameButton.addEventListener('click', () => {
     hitButton.style.display = 'inline'
     stayButton.style.display = 'inline'
     blackjackTable()
+    audio.load();
+    audio.play();
 })
 
 function theTotal(cardArray) {
@@ -205,10 +209,14 @@ hitButton.addEventListener('click', () => {
     gamblerHand.push(getCard())
     whoWins()
     blackjackTable()
+    audio.load();
+    audio.play()
 })
     
 stayButton.addEventListener('click', () => {
     gameIsDone = true
     whoWins()
     blackjackTable()
+    audio.load();
+    audio.play()
 })

@@ -8,6 +8,12 @@ body {
     background-size: cover;
 }  
 
+h1 {
+    color: burlywood;
+}
+
+
+
 
 button {
     font-size:20px;
@@ -29,3 +35,7 @@ button#stay:hover {
 button#start-game:hover {
     color: goldenrod
 }
+
+/* button:active {
+
+} */
