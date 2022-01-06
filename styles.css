@@ -30,6 +30,13 @@ h1 {
     100% {color: plum;}
 }
 
+span {
+    font-size: 50px;
+    font-family: fantasy;
+    text-shadow: 1px 1px 1px red;
+}
+
+
 button {
     font-size:20px;
     font-weight:bold;
