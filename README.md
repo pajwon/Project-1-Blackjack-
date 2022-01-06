@@ -1,4 +1,4 @@
-# Project-1-Blackjack-
+# Project-1-Blackjack
 
 ## Blackjack Background Info
 Blackjack is a card game that goes to the score of 21. There are usually several 
@@ -21,5 +21,15 @@ are couple ways you can do that
     file:///Users/PajwonAshraf/Desktop/seir-1213/unit1/projects/project1-Blackjack/Project-1-Blackjack-/index.html
 
 - Link above is for the game 
+- Click Start Game when you want to begin 
+- Use the hit button to get an additional card to help get you closer to 21
+- Use the stay button to stay with cards you have 
+    - The dealer will hit or stay
+    - The dealer's and player's total will be compared to get a winner
 
 ## Next Steps 
+- To have actual playing card images appear in the deck
+- Hide first card of the dealer     
+    - dont show until player stands
+- Give an actual chip count to player 
+    - will gain a chip everytime player wins and loses a chip with every loss
