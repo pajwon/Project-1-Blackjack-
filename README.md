@@ -28,7 +28,8 @@ are couple ways you can do that
     - The dealer's and player's total will be compared to get a winner
 
 ## Next Steps 
-- To have actual playing card images appear in the deck
+- To have actual playing card images appear in the deck 
+    - use API 
 - Hide first card of the dealer     
     - dont show until player stands
 - Give an actual chip count to player 
