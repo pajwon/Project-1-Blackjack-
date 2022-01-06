@@ -24,3 +24,7 @@ button#stay:hover {
     color: red;
     background-color: moccasin;
 }
+
+button#start-game:hover {
+    color: goldenrod
+}
