@@ -184,7 +184,6 @@ function blackjackTable () {
     for (let j = 0; j < gamblerHand.length; j++) {
         gamblerString += eachCard(gamblerHand[j]) + "\n"
     }
-
     reviseTotal()
 
     gameText.innerText = "\nDealer's hand is \n " + dealerString + ' Total: ' + dealerTotal + '\n\n\n\n\n\n\n Gambler hand is \n' + gamblerString + ' Total: ' + gamblerTotal + "\n"
