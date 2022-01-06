@@ -187,13 +187,16 @@ function blackjackTable () {
 
     reviseTotal()
 
-    gameText.innerText = "\n\nDealer's hand is \n " + dealerString + ' Total: ' + dealerTotal + '\n\n\n\n\n\n\n Gambler hand is \n' + gamblerString + ' Total: ' + gamblerTotal + "\n"
+    gameText.innerText = "\nDealer's hand is \n " + dealerString + ' Total: ' + dealerTotal + '\n\n\n\n\n\n\n Gambler hand is \n' + gamblerString + ' Total: ' + gamblerTotal + "\n"
 
     if(gameIsDone) {
         if (gamblerWon) {
-            gameText.innerText += "MONEY MONEY"
+            textOne = ["WINNER", "Nice Hand", "Your Chip Pile Is Getting Bigger"]
+            gameText.innerText += textOne[Math.floor(Math.random() * textOne.length)]
         } else {
-            gameText.innerText += "THE HOUSE ALWAYS WINS"
+            textTwo = ["The House Always WINS", "Better Luck Next Time", "You Sure Are Good At Losing"]
+            gameText.innerText += textTwo[Math.floor(Math.random() * textTwo.length)]
+            
         }
         startGameButton.style.display = 'inline'
         hitButton.style.display = 'none'
