@@ -10,7 +10,25 @@ body {
 
 h1 {
     color: burlywood;
+    animation-name: headlineOne;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
 }
+
+@keyframes headlineOne {
+    0% {color: red;}
+    10% {color: orange;}
+    20% {color: yellow;}
+    30% {color: limegreen;}
+    40% {color: skyblue;}
+    50% {color: blue;}
+    60% {color: mediumpurple;}
+    70% {color: purple;}
+    80% {color: palevioletred;}
+    90% {color: magenta;}
+    100% {color: plum;}
+}
+
 
 
 
@@ -35,7 +53,3 @@ button#stay:hover {
 button#start-game:hover {
     color: goldenrod
 }
-
-/* button:active {
-
-} */
