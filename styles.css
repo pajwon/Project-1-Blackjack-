@@ -19,3 +19,8 @@ button {
     color: green;
     background-color: midnightblue;
 }
+
+button#stay:hover {
+    color: red;
+    background-color: moccasin;
+}
