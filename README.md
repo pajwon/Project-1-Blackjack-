@@ -9,7 +9,7 @@ are couple ways you can do that
 2. Having the dealer go over 21 in which the dealer busts
 3. Having a higher score than the dealer, but not yourself going over 21
 
-### Schedule of creating game 
+### Timeline of Creating Game
 - December 23: Chose Blackjack as the game I wanted to create for the Project.
 - December 26: Worked on the wireframe of the game with pen and paper
 - December 27-29: Worked on Pseudocode for the game on how the game should work.
@@ -27,8 +27,9 @@ are couple ways you can do that
 
 ![](./images/blackjack.png)
 
+![](./images/blackjack2.png)
 
-
+![](./images/blackjack3.png)
 
 ## Technologies used:
     1. HTML
