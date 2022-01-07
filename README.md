@@ -9,6 +9,18 @@ are couple ways you can do that
 2. Having the dealer go over 21 in which the dealer busts
 3. Having a higher score than the dealer, but not yourself going over 21
 
+### Schedule of creating game 
+- December 23: Chose Blackjack as the game I wanted to create.
+- December 26: Worked on the wireframe of the game with pen and paper
+- December 27-29: Worked on Pseudocode for the game 
+- January 3: Began coding the game setting up HTML, CSS and Javascript files
+- January 4: Set up variables, created deck, giving values to cards and shuffled deck 
+  functions
+- January 5: Created who wins and comparing hands functions. Also innertext event 
+  listener
+- January 6: Created event listeners for hit and stay buttons. Got the game running
+- January 7: CSS and cleaning up Javascript
+
 ## ScreenShots of Game
 
 ![alt text](file:///Users/PajwonAshraf/Desktop/Screen%20Shot%202022-01-07%20at%209.04.06%20AM.png)
@@ -20,7 +32,7 @@ are couple ways you can do that
     3. Javascript
 
 ## Getting Started:
-    file:///Users/PajwonAshraf/Desktop/seir-1213/unit1/projects/project1-Blackjack/Project-1-Blackjack-/index.html
+    https://pajwon.github.io/Project-1-Blackjack-/
 
 - Link above is for the game 
 - Click Start Game when you want to begin 
@@ -31,8 +43,10 @@ are couple ways you can do that
 
 ## Next Steps 
 - To have actual playing card images appear in the deck 
-    - use API 
+    - use an API 
 - Hide first card of the dealer     
     - dont show until player stands
+    - then show the hidden card 
 - Give an actual chip count to player 
-    - will gain a chip everytime player wins and loses a chip with every loss
+    - will gain a chip everytime player wins 
+    - and loses a chip with every loss to the dealer
