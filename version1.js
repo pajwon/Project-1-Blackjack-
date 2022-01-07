@@ -18,7 +18,6 @@ let stayButton = document.querySelector('#stay')
 let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/clickUp.mp3')
 let audio2 = new Audio('https://www.chosic.com/wp-content/uploads/2020/05/Study-and-Relax.mp3')
 
-
 //in html just want to show start game not hit and stay yet 
 hitButton.style.display = 'none'
 stayButton.style.display = 'none'
