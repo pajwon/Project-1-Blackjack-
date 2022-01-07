@@ -34,7 +34,7 @@ are couple ways you can do that
     3. Javascript
 
 ## Getting Started:
-    https://pajwon.github.io/Project-1-Blackjack-/
+https://pajwon.github.io/Project-1-Blackjack-/
 
 - Link above is for the game 
 - Click Start Game when you want to begin 
