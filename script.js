@@ -15,9 +15,9 @@ let startGameButton = document.querySelector('#start-game')
 let hitButton = document.querySelector('#hit')
 let stayButton = document.querySelector('#stay')
 
+//create audio for music and clicking sound for buttons
 let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/clickUp.mp3')
 let audio2 = new Audio('https://www.chosic.com/wp-content/uploads/2020/05/Study-and-Relax.mp3')
-
 
 //in html just want to show start game not hit and stay yet 
 hitButton.style.display = 'none'
@@ -28,19 +28,15 @@ function makeDeck() {
     let deck = []
     for (let i = 0; i < suits.length; i++) {
         for (let n = 0; n < numbers.length; n++) {
-            //this makes one card with random suit and number so make card variable
             let card = {
                 suit: suits[i],
                 number: numbers[n]
-            }
-            //add the card to deck 
+            } 
             deck.push(card);
         }
     }
     return deck
 }
-// check console to see if you made 52 cards, it worked! but in order
-// console.log(makeDeck()) 
 
 // creating conditional for each number to give an actual numeric value 
 function cardValue(card) {
@@ -67,7 +63,6 @@ function cardValue(card) {
     }
 }
 
-// deck = makeDeck()
 //need deck in random order, need it shuffled 
 function deckShuffling(deck) {
     for (let i=0; i<deck.length; i++) {
@@ -75,16 +70,10 @@ function deckShuffling(deck) {
         let shuffled = deck[random]
         deck[random] = deck[i]
         deck[i] = shuffled  
-
-        //using console.log to check if deck is shuffled
-        // console.log(shuffled)
     }
 }
-// invoking to see console.log of shuffled, it is random
-// shuffledDeck(deck)
 
 //need function to get a card from top of the deck
-    //to later add for hit and for hands of each person
 function getCard() {
     return deck.shift()
 }
@@ -118,8 +107,6 @@ function whoWins () {
 }
 
 //event listeners first for starting the game 
-    //use the three boolean values from beginning 
-
 startGameButton.addEventListener('click', () => {
     startGame = true 
     gameIsDone = false
@@ -134,13 +121,16 @@ startGameButton.addEventListener('click', () => {
     startGameButton.style.display = 'none'
     hitButton.style.display = 'inline'
     stayButton.style.display = 'inline'
+
     blackjackTable()
+
     audio.load();
     audio.play();
 
     audio2.play();
 })
 
+//function to find total of hand if there is an Ace
 function theTotal(cardArray) {
     let total = 0 
     let anAce = false
@@ -157,36 +147,35 @@ function theTotal(cardArray) {
     return total
 }
 
+//function for each persons total 
 function reviseTotal () {
     dealerTotal = theTotal(dealerHand)
     gamblerTotal = theTotal(gamblerHand)
 }
 
+//function for what each card has includes
 function eachCard(card) {
     return `${card.number} ${card.suit}`
 }
 
-//created function table to add text 
-    // instead of writing it in index html all the writing 
-    // will an id to a <p> tag to add everything else on js 
-
+//created function table to add text of the game
 let gameText = document.querySelector('#game-text')
 function blackjackTable () {
     if (startGame === false) {
         gameText.innerText = 'BLACKJACK'
         return;
     }
-    //made a loop for dealer hand to have what the two cards dealer has 
-    // will have to add text later to gameText 
+
     let dealerString = ''
     for (let i = 0; i < dealerHand.length; i++) {
         dealerString += eachCard(dealerHand[i]) + "\n"
     }
-    //do same thing for gambler
+
     let gamblerString = ''
     for (let j = 0; j < gamblerHand.length; j++) {
         gamblerString += eachCard(gamblerHand[j]) + "\n"
     }
+
     reviseTotal()
 
     gameText.innerText = "\nDealer's hand is \n " + dealerString + ' Total: ' + dealerTotal + '\n\n\n\n\n\n\n Gambler hand is \n' + gamblerString + ' Total: ' + gamblerTotal + "\n"
@@ -200,16 +189,15 @@ function blackjackTable () {
             gameText.innerText += textTwo[Math.floor(Math.random() * textTwo.length)]
             
         }
+
         startGameButton.style.display = 'inline'
         hitButton.style.display = 'none'
         stayButton.style.display = 'none'
+
     }
 }
 
-//for hit and stay need add whowins function to check each others hand 
-    // need a function also to add to hit and stay to have text for now for what 
-    // each person actually has like Dealer hand is A Diamonds and J Clubs and to say 
-    // the total of which will be 21 
+//event listener for hit button
 hitButton.addEventListener('click', () => {
     gamblerHand.push(getCard())
     whoWins()
@@ -218,6 +206,7 @@ hitButton.addEventListener('click', () => {
     audio.play()
 })
     
+//event listener for stay button
 stayButton.addEventListener('click', () => {
     gameIsDone = true
     whoWins()
