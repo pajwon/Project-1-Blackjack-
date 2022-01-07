@@ -44,7 +44,7 @@ button {
     cursor: pointer;
 }
 
- button#hit:hover {
+button#hit:hover {
     color: green;
     background-color: midnightblue;
 }
