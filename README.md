@@ -25,7 +25,9 @@ are couple ways you can do that
 
 ## ScreenShots of Game
 
-![alt text](file:///Users/PajwonAshraf/Desktop/Screen%20Shot%202022-01-07%20at%209.04.06%20AM.png)
+![](./images/blackjack.png)
+
+
 
 
 ## Technologies used:
