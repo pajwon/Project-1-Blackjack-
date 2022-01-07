@@ -10,16 +10,18 @@ are couple ways you can do that
 3. Having a higher score than the dealer, but not yourself going over 21
 
 ### Schedule of creating game 
-- December 23: Chose Blackjack as the game I wanted to create.
+- December 23: Chose Blackjack as the game I wanted to create for the Project.
 - December 26: Worked on the wireframe of the game with pen and paper
-- December 27-29: Worked on Pseudocode for the game 
+- December 27-29: Worked on Pseudocode for the game on how the game should work.
 - January 3: Began coding the game setting up HTML, CSS and Javascript files
 - January 4: Set up variables, created deck, giving values to cards and shuffled deck 
-  functions
+  functions 
 - January 5: Created who wins and comparing hands functions. Also innertext event 
-  listener
-- January 6: Created event listeners for hit and stay buttons. Got the game running
-- January 7: CSS and cleaning up Javascript
+  listener with a function saying what each person has and who wins.
+- January 6: Created event listeners for hit and stay buttons. Got the game running 
+  without any CSS. Started working on CSS and styling game. 
+- January 7: CSS and cleaning up Javascript. Created 3 separate Javascript files 
+  where the first one is for pseudocode, second one(version1.js) is whole code with all comments made and final one is scipt.js code where final code with minimal comments left.
 
 ## ScreenShots of Game
 
