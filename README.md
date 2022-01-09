@@ -7,7 +7,7 @@ player competes with the dealer. Whole point of game is to beat the dealer and t
 are couple ways you can do that
 1. Getting a blackjack (An 'Ace' with either 'King', 'Queen', 'Jack', 'Ten')
 2. Having the dealer go over 21 in which the dealer busts
-3. Having a higher score than the dealer, but not yourself going over 21
+3. Having a higher score than the dealer, but yourself not going over 21
 
 ### Timeline of Creating Game
 - December 23: Chose Blackjack as the game I wanted to create for the Project.
@@ -22,13 +22,17 @@ are couple ways you can do that
   without any CSS. Started working on CSS and styling game. 
 - January 7: CSS and cleaning up Javascript. Created 3 separate Javascript files 
   where the first one is for pseudocode, second one(version1.js) is whole code with all comments made and final one is scipt.js code where final code with minimal comments left.
+- January 8 : Final updates to HTML, CSS, Javascript. ReadMe completed with images.
 
 ## ScreenShots of Game
 
+This first image shows the home page of the game before the game has started. 
 ![](./images/blackjack.png)
 
+Now once the game has started here, and the player has won. Here is an image showing what a winning hand looks like and one of the text that shows up when winning.
 ![](./images/blackjack2.png)
 
+This final image shows player going over 21 and busting in which the dealer wins. 
 ![](./images/blackjack3.png)
 
 ## Technologies used:
