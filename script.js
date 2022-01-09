@@ -182,12 +182,11 @@ function blackjackTable () {
 
     if(gameIsDone) {
         if (gamblerWon) {
-            textOne = ["WINNER", "Nice Hand", "Your Chip Pile Is Getting Bigger"]
+            textOne = ["WINNER", "Nice Hand", "Great Job Beating the House"]
             gameText.innerText += textOne[Math.floor(Math.random() * textOne.length)]
         } else {
             textTwo = ["The House Always WINS", "Better Luck Next Time", "You Sure Are Good At Losing"]
             gameText.innerText += textTwo[Math.floor(Math.random() * textTwo.length)]
-            
         }
 
         startGameButton.style.display = 'inline'
